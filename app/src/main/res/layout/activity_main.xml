@@ -14,47 +14,25 @@
         android:text="Hours Worked:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/regularWage"
+        android:id="@+id/hoursOvertimeDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/regularWageDisplay"
-        app:layout_constraintStart_toEndOf="@+id/regularWageDisplay"
-        app:layout_constraintTop_toTopOf="@+id/regularWageDisplay"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/totalWageDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="Total Wage Received:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/regularWageDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
-        android:text="Total Regular Wage:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="8dp"
+        android:text="Hours Overtime:"
+        app:layout_constraintEnd_toEndOf="@+id/hoursRenderedDisplay"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/hoursRenderedDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/hoursRenderedDisplay" />
 
     <TextView
         android:id="@+id/regularHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="48dp"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/hoursRenderedDisplay"
         app:layout_constraintStart_toEndOf="@+id/hoursRenderedDisplay"
@@ -62,48 +40,15 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/overtimeWageDisplay"
+        android:id="@+id/regularWageDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Total Overtime Wage:"
-        app:layout_constraintEnd_toEndOf="@+id/regularWageDisplay"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/regularWageDisplay"
-        app:layout_constraintTop_toBottomOf="@+id/regularWageDisplay" />
-
-    <TextView
-        android:id="@+id/totalWage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="0"
-        app:layout_constraintEnd_toEndOf="@+id/regularWage"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/regularWage"
-        app:layout_constraintTop_toBottomOf="@+id/regularWage" />
-
-    <TextView
-        android:id="@+id/overtimeWage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="0"
-        app:layout_constraintEnd_toEndOf="@+id/regularWage"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/regularWage"
-        app:layout_constraintTop_toBottomOf="@+id/regularWage" />
-
-    <TextView
-        android:id="@+id/totalHours"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="0"
-        app:layout_constraintEnd_toEndOf="@+id/regularHours"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/regularHours"
-        app:layout_constraintTop_toBottomOf="@+id/regularHours" />
+        android:layout_marginBottom="96dp"
+        android:text="Total Regular Wage:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/totalHoursDisplay"
@@ -113,7 +58,7 @@
         android:text="Total Hours Worked:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -128,15 +73,70 @@
         app:layout_constraintTop_toBottomOf="@+id/regularHours" />
 
     <TextView
-        android:id="@+id/hoursOvertimeDisplay"
+        android:id="@+id/totalHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/regularHours"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regularHours"
+        app:layout_constraintTop_toBottomOf="@+id/regularHours" />
+
+    <TextView
+        android:id="@+id/regularWage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/regularWageDisplay"
+        app:layout_constraintStart_toEndOf="@+id/regularWageDisplay"
+        app:layout_constraintTop_toTopOf="@+id/regularWageDisplay"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/totalWageDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Total Wage Received:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.718"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/overtimeWageDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Hours Overtime:"
-        app:layout_constraintEnd_toEndOf="@+id/hoursRenderedDisplay"
+        android:text="Total Overtime Wage:"
+        app:layout_constraintEnd_toEndOf="@+id/regularWageDisplay"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/hoursRenderedDisplay"
-        app:layout_constraintTop_toBottomOf="@+id/hoursRenderedDisplay" />
+        app:layout_constraintStart_toStartOf="@+id/regularWageDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/regularWageDisplay" />
+
+    <TextView
+        android:id="@+id/overtimeWage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/regularWage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regularWage"
+        app:layout_constraintTop_toBottomOf="@+id/regularWage" />
+
+    <TextView
+        android:id="@+id/totalWage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/regularWage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regularWage"
+        app:layout_constraintTop_toBottomOf="@+id/regularWage" />
 
     <EditText
         android:id="@+id/editName"
@@ -255,5 +255,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/paidTotal"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="You were paid 0 PHP"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.995" />
+
+    <TextView
+        android:id="@+id/workhourTotal"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="You have worked for 0 hours"
+        android:textAlignment="center"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

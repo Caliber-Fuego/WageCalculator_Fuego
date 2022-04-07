@@ -12,8 +12,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText editName, editHours;
-    TextView hoursWorked, overtimeHours, totalHours, regularWage, overtimeWage, totalWage;
+    Calculations calc;
+
+    protected EditText editName, editHours;
+    TextView hoursWorked, overtimeHours, totalHours, regularWage, overtimeWage, totalWage, hoursDisplay, paidDisplay;
     RadioGroup radioEmployee;
     Button calculate;
     RadioButton employeeType;
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         regularWage   = findViewById(R.id.regularWage);
         overtimeWage  = findViewById(R.id.overtimeWage);
         totalWage     = findViewById(R.id.totalWage);
+        hoursDisplay = findViewById(R.id.workhourTotal);
+        paidDisplay = findViewById(R.id.paidTotal);
         radioEmployee = findViewById(R.id.groupEmployeeType);
         calculate = findViewById(R.id.calculateWage);
 
@@ -73,57 +77,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         // 1 - 8 hours (regular work hours): 100 pesos per hour
                         // overtime(calculated each hour after the 8 work hour: 115 pesos per hour
 
-                        overtimeHour = Math.max(0, totalHours - 8);
-                        regularHour = Math.min(totalHours, 8);
+                        calc.regularRate(overtimeHour,regularHour,wage, otWage, wageTotal, totalHours,
+                                hoursWorked, overtimeHours, this.totalHours, regularWage, overtimeWage, totalWage,
+                                100, 115);
 
-                        wage = Math.min(totalHours*100, (100*8));
-                        otWage = overtimeHour*120;
-                        wageTotal = wage+otWage;
-
-                        hoursWorked.setText(String.valueOf(regularHour));
-                        overtimeHours.setText(String.valueOf(overtimeHour));
-                        this.totalHours.setText(String.valueOf(totalHours));
-                        regularWage.setText(String.valueOf(wage));
-                        overtimeWage.setText(String.valueOf(otWage));
-                        totalWage.setText(String.valueOf(wageTotal));
+                        hoursDisplay.setText(editName.getText()+" has worked for "+hoursWorked.getText()+" Regular Hours \n \n and "
+                                             +overtimeHours.getText()+ " Overtime Hours");
+                        paidDisplay.setText(editName.getText()+" was paid " +totalWage.getText()+ "PHP");
                         break;
                     case "Probationary":
                         // Probationary Employee:
                         // 1-8 hours: 90 pesos per hour
                         // overtime: 100 pesos per hour
 
-                        overtimeHour = Math.max(0, totalHours - 8);
-                        regularHour = Math.min(totalHours, 8);
+                        calc.regularRate(overtimeHour,regularHour,wage, otWage, wageTotal, totalHours,
+                                hoursWorked, overtimeHours, this.totalHours, regularWage, overtimeWage, totalWage,
+                                90, 100);
 
-                        wage = Math.min(totalHours*90, (90*8));
-                        otWage = overtimeHour*100;
-                        wageTotal = wage+otWage;
-
-                        hoursWorked.setText(String.valueOf(regularHour));
-                        overtimeHours.setText(String.valueOf(overtimeHour));
-                        this.totalHours.setText(String.valueOf(totalHours));
-                        regularWage.setText(String.valueOf(wage));
-                        overtimeWage.setText(String.valueOf(otWage));
-                        totalWage.setText(String.valueOf(wageTotal));
+                        hoursDisplay.setText(editName.getText()+" has worked for "+hoursWorked.getText()+" Regular Hours \n \n and "
+                                +overtimeHours.getText()+ " Overtime Hours");
+                        paidDisplay.setText(editName.getText()+" was paid " +totalWage.getText()+ "PHP");
                         break;
                     case "Part-Time":
                         // Part-time workers:
                         // 1-8 hours: 75 pesos per hour
                         // overtime: 90 pesos per hour
+                        calc.regularRate(overtimeHour,regularHour,wage, otWage, wageTotal, totalHours,
+                                hoursWorked, overtimeHours, this.totalHours, regularWage, overtimeWage, totalWage,
+                                75, 90);
 
-                        overtimeHour = Math.max(0, totalHours - 8);
-                        regularHour = Math.min(totalHours, 8);
-
-                        wage = Math.min(totalHours*75, (75*8));
-                        otWage = overtimeHour*90;
-                        wageTotal = wage+otWage;
-                        hoursWorked.setText(String.valueOf(regularHour));
-                        overtimeHours.setText(String.valueOf(overtimeHour));
-                        this.totalHours.setText(String.valueOf(totalHours));
-
-                        regularWage.setText(String.valueOf(wage));
-                        overtimeWage.setText(String.valueOf(otWage));
-                        totalWage.setText(String.valueOf(wageTotal));
+                        hoursDisplay.setText(editName.getText()+" has worked for "+hoursWorked.getText()+" Regular Hours \n \n and "
+                                +overtimeHours.getText()+ " Overtime Hours");
+                        paidDisplay.setText(editName.getText()+" was paid " +totalWage.getText()+ "PHP");
                         break;
                 }
         }
